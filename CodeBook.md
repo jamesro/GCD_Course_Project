@@ -6,7 +6,6 @@ Subsequently, the body linear acceleration and angular velocity were derived in 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
 ##Variables
-* ”x”
 * ”subject_id"
 * "activity"
 * "tBodyAcc.mean...X"
@@ -90,3 +89,11 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 * "fBodyBodyGyroJerkMag.std.."
   
 ## run_analysis.R
+* Downloads the data from the source given in the introduction
+* Unzips the data to a specified location, if it doesn't exist already
+* The features, training set and testing sets are all read into memory
+* The training sets are merged to form one large dataset
+* Extracts only the columns for the mean and standard deviation of measurements (other columns are removed)
+* Reads the activity names from the activity_labels.txt file
+* Labels the dataset with descriptive variable names
+* Creates a new dataset with only the average measurement for mean and standard deviation for each subject and each activity. This new dataset is saved as "tidy dataset.txt"
